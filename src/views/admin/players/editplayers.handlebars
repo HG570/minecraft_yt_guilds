@@ -1,0 +1,29 @@
+<main>
+    <div class="p-5 mb-4 bg-dark rounded-3">
+        <button onclick="history.back()" class="btn btn-primary">Voltar</button>
+        <div class="container-fluid py-5">
+            <h3> Editar Players: </h3>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/rota_players/players/editar_players" method="POST">
+                        {{#if players}}
+                        <label for="_id">ID: </label>
+                        <input type="text" id="_id" name="_id" readonly="true" class="form-control"
+                            value="{{players._id}}"><br>
+                        <label for="nome">Nome: </label>
+                        <input type="text" id="nome" name="nome" class="form-control" value="{{players.nome}}"><br>
+                        <label for="guild">Equipe: </label>
+                        <select id="guild" name="guild">
+                            {{#each guilds}}
+                                <option value="{{this._id}}">{{this.nome}}</option>
+                            {{/each}}
+                        </select>
+                        <br><br>
+                        <button type="submit" class="btn btn-success">Editar Players</button>
+                    </form>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

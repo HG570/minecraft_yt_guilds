@@ -1,0 +1,32 @@
+<main>
+    <div class="p-5 mb-4 bg-dark rounded-3">
+        <button onclick="history.back()" class="btn btn-primary">Voltar</button>
+        <div class="container-fluid py-5">
+            <h2>Lista de Players</h2>
+            <hr>
+            <a href="/rota_players/players/add">
+                <button class="btn btn-success">Novo Player</button></a>
+            {{#each players}}
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4><b>ID:</b>{{_id}}</h4>
+                    <small><b>Nome:</b> {{nome}} </small><br>
+                    <small><b>Equipe:</b> {{guild}} </small><br>
+                    <!--Botão para editar players-->
+                    <a href="/rota_players/editar_players/{{_id}}">
+                        <button class="btn btn-success mt-3">
+                            Editar players
+                        </button>
+                    </a>
+                    <!--botão para deletar players -->
+                    <a href="/rota_players/deletar_players/{{_id}}">
+                        <button class="btn btn-danger mt-3">
+                            Deletar players
+                        </button>
+                    </a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</main>

@@ -1,0 +1,28 @@
+<main>
+    <div class="p-5 mb-4 bg-dark rounded-3">
+        <button onclick="history.back()" class="btn btn-primary">Voltar</button>
+        <div class="container-fluid py-5">
+            <h3> Novo Player: </h3>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/rota_players/players/nova" method="POST">
+                        <label for="nome">Nome: </label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite o nome da tarefa"
+                            class="form-control">
+                        <br>
+                        <label for="guild">Equipe: </label>
+                        <select id="guild" name="guild">
+                            {{#each guilds}}
+                            <option value="{{this._id}}">{{this.nome}}</option>
+                            {{/each}}
+                        </select>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-success">Cadastrar
+                            Players</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
